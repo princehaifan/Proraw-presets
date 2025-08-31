@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ProRAW Preset Selector</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* For the before-after slider */
+      .slider-container {
+        position: relative;
+        overflow: hidden;
+      }
+      .slider-handle {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        background: rgba(255, 255, 255, 0.8);
+        cursor: ew-resize;
+        z-index: 20;
+      }
+      .slider-handle::after {
+        content: ' ';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 2px solid white;
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      }
+      .slider-handle .arrow-left, .slider-handle .arrow-right {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: black;
+        font-weight: bold;
+        font-size: 1.25rem;
+        pointer-events: none;
+      }
+      .slider-handle .arrow-left {
+        margin-left: -10px;
+      }
+      .slider-handle .arrow-right {
+        margin-left: 10px;
+      }
+      .after-image-container {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        overflow: hidden;
+        z-index: 10;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.16.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-gray-900 text-white antialiased">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
